@@ -14,6 +14,15 @@ import teamMembers from "../assets/teamMemberIcon.png";
 import messageTabIcon from "../assets/messageTabIcon.png";
 import dashboardIcon from "../assets/dashboardIcon.png";
 import calendarTabIcon from "../assets/calendarTabIcon.png";
+import add from "../assets/add-square.png";
+import arrowRight from "../assets/arrow-right.png";
+import box from "../assets/box.png";
+import Avatar from "../assets/Avatar.png";
+import moon from "../assets/moon.png";
+import notification from "../assets/notification.png";
+import search from "../assets/search-normal.png";
+import sun from "../assets/sun.png";
+import arrowDown from "../assets/arrow-down.png";
 // Logo images
 import logoOne from "../assets/logoOne.png";
 import logoTwo from "../assets/logoTwo.png";
@@ -41,5 +50,14 @@ export default {
     calendarTabIcon,
     logoOne,
     logoTwo,
-    gind
+    gind,
+    add,
+    arrowRight,
+    box,
+    Avatar,
+    moon,
+    notification,
+    search,
+    sun,
+    arrowDown,
 }

@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
-import { assets } from '../constants'
+import { NavLink } from 'react-router-dom/dist';
+import { assets } from '../constants';
+import {workspace} from "../constants"
 
 
 
@@ -38,16 +40,27 @@ import { assets } from '../constants'
     ];
 
 
+const Navigation = () => {
+    
+    return (
+        <div>
 
+        </div>
+    )
+}
 
 
 const Aside = () => {
+    const [indexItem, setIndexItem] = useState(0);
+    const [toggle, setToggle] = useState(false);
+   
+
   return (
     <>
-        <div className={`bg-[#F6F6F6] h-[100vh]`}>
+        <div className={`aside`}>
             {/* logo section */}
-            <div>
-                <Link to={"/"} className={`relative flex p-[30px] items-center justify-center`}>
+            <div className=''>
+                <Link to={"/"} className={`logo-section`}>
                     <img 
                         src={assets.logoOne} 
                         alt="logoOne"
@@ -64,13 +77,17 @@ const Aside = () => {
                             width: "27px",
                             height: "36px"
                         }}
-                        className={`ml-[-.57rem] mt-[2rem]`}
+                        className={`ml-[-0.82rem] mt-[2rem]`}
                     />
                     <h4 className={`text-5xl ml-4 font-bold`}>Grind</h4>
                 </Link>
             </div>
             {firstTier.map((item) => (
-                    <div className={`flex justify-start items-center mx-[30px] mb-[30px]`}>
+                    <div className={`first-tier`}
+                    style={{ 
+                        transition: "all",
+                        transitionDuration: "500ms"
+                    }}>
                         <img
                             src={item.routeIcon}
                             alt="route icon"
@@ -79,14 +96,111 @@ const Aside = () => {
                                 marginRight: "17px"
                             }}
                         />
-                        <Link to={`/${item.routePath}`}>
+                        <NavLink to={`/${item.routePath}`}>
                             <span className='text-[#848484]'>{item.routeName}</span>
-                        </Link>
+                        </NavLink>
                     </div>
             ))}
+
+            <hr className='text-[#DBDBDB] mb-[30px]' />
+
+            <div>
+                {/* Second tier */}
+                <button className='second-tier' 
+                    style={{ 
+                        transition: "all",
+                        transitionDuration: "500ms"
+                    }}>
+                    <h4>Workspace</h4>
+                    <img 
+                        src={assets.add} 
+                        alt="add"
+                        style={{
+                            width: "24px"
+                        }}
+                    />
+                </button>
+
+                <div>
+                    {workspace.map((item, index) => (
+                        <div key={index}>
+                            <button 
+                            onClick={() => {
+                                setIndexItem(index);
+                                setToggle(!toggle);
+                            }}
+                            className={
+                                `workspace-one 
+                                ${index == indexItem ? `mb-[20px]` : `mb-[30px]`} 
+                                workspace-three
+                            `}
+                            style={{ 
+                                transition: "all",
+                                transitionDuration: "500ms"
+                            }}>
+                                <img 
+                                    src={assets.arrowRight} 
+                                    alt="right arrow"
+                                    style={{
+                                        width: "18px"
+                                    }} 
+                                />
+                                <img 
+                                    src={assets.box} 
+                                    alt="right arrow"
+                                    style={{
+                                        width: "22px",
+                                        marginLeft: "20px",
+                                        marginRight: "16px"
+                                    }} 
+                                />
+                                {item.name}
+                            </button>
+                            <div>
+                                {item.subWorkspaces != [] && (indexItem == index && toggle) ? (
+                                    <div className='ml-[60px]'>
+                                    {/* Subdropdown */}
+                                    {item.subWorkspaces?.map((item, index) => (
+                                            <NavLink to={`workspace/workspace-item/${item.name.toLowerCase()}`} key={item.id} className='subdropdown' 
+                                            style={{ 
+                                                transition: "all",
+                                                transitionDuration: "500ms"
+                                            }}>
+                                                {item.name}
+                                            </NavLink>
+                                    ))}
+                                </div>
+                                ) : null}
+                                {item.subWorkspaces != [] && (indexItem == index && toggle) && (
+                                    <div className='subworkspace' 
+                                        style={{ 
+                                            transition: "all",
+                                            transitionDuration: "500ms"
+                                        }}>
+                                    <img 
+                                        src={assets.addIcon} 
+                                        alt="add icon"
+                                        style={{
+                                            width: "8px",
+                                            height: "8px",
+                                            marginRight: "15px"
+                                        }} 
+                                    />
+                                    <button>Add</button>
+                                </div>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                    
+                    {/* Add btn on void: */}
+                </div>
+            </div>
         </div>
     </>
   )
 }
 
 export default Aside;
+
+// Add workspace on void:

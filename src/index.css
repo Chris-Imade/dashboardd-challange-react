@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    overflow-y: hidden;
+}
+
+@layer utilities {
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+}
+ @layer components {
+    .aside {
+        @apply bg-[#F6F6F6] h-[100vh] no-scrollbar overflow-y-auto;
+    }
+    .logo-section {
+        @apply relative flex p-[30px] items-center justify-start;
+    }
+    .first-tier {
+        @apply flex justify-start items-center mx-[30px] mb-[30px] hover:opacity-40;
+    }
+    .second-tier {
+        @apply flex justify-between items-center px-[30px] mb-[30px] hover:opacity-40 text-[#848484] w-full;
+    }
+    .workspace-one {
+        @apply flex justify-start items-center px-[30px];
+    }
+    .workspace-three {
+        @apply hover:opacity-40 text-[#848484] w-full;
+    }
+    .subdropdown {
+        @apply flex justify-start items-center px-[15px] pt-[10px] pb-[10px] hover:opacity-40 text-[#848484] w-[95%] hover:bg-[#F1EFEF] rounded-[8px];
+    }
+    .subworkspace {
+        @apply ml-10 flex justify-start items-center px-[30px] hover:opacity-40 text-[#848484] w-[90%] hover:bg-[#F1EFEF] rounded-[8px] mb-4;
+    }
+ }
+

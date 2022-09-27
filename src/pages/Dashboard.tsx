@@ -1,8 +1,14 @@
 import React from 'react'
+import { Header } from '../components'
 
 const Dashboard = () => {
   return (
-    <div className='bg-purple-400 h-[100vh] flex items-center justify-center text-4xl font-bold'>Dashboard</div>
+    <div className='flex flex-col justify-start mt-[11rem] overflow-y-auto no-scrollbar h-[100vh]'>
+      <Header />
+      <div className='m-11'>
+        
+      </div>
+    </div>
   )
 }
 
