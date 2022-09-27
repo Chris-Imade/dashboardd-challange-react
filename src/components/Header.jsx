@@ -1,7 +1,7 @@
 import React from 'react'
 import { assets } from '../constants';
 
-const Header = () => {
+const Header = ({ title }) => {
   return (
     <div className='w-full'>
         {/* Conditionally render this span depending on which route am on */}
@@ -15,7 +15,7 @@ const Header = () => {
             }}
         >
             <div className='flex flex-col md:flex-row md:justify-between mr-11'>
-                <h1 className='text-[50px] font-bold text-black'>Dashboard</h1>
+                <h1 className='text-[50px] font-bold text-black'>{title}</h1>
                 <button className='bg-[#0066FF] w-[165px] h-[47px] rounded-[12px] text-white'>
                     + Add Task
                 </button>

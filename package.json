@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@syncfusion/ej2-react-grids": "^20.2.49",
     "@syncfusion/ej2-react-schedule": "^20.2.50",
     "global": "^4.4.0",
     "react": "^18.2.0",

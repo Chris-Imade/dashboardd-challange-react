@@ -7,14 +7,8 @@ import {
   WorkWeek,
   Month,
   MonthAgenda,
-  Print,
   ScheduleComponent,
-  ViewsDirective,
-  ViewDirective,
-  ResourcesDirective,
-  ResourceDirective,
   Inject,
-  Resize,
   DragAndDrop,
   Agenda
 } from '@syncfusion/ej2-react-schedule';
@@ -23,9 +17,9 @@ import Header from '../Header';
 
 const Calendar = () => {
   return (
-    <div className='m-2 md:m-1- mt-[17rem] p-2 md:p-10 bg-white rounded-3xl overflow-y-auto no-scrollbar h-[100vh] mb-[12rem]'>
-      <Header />
-      <div className='mt-12'>
+    <div className='mt-[11rem] bg-white rounded-3xl overflow-y-auto no-scrollbar h-[100vh] mb-[12rem]'>
+      <Header title={"Calendar"} />
+      <div className='m-12 mb-[15rem]'>
         <ScheduleComponent
           height="550px"
           eventSettings={{
