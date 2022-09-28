@@ -1,17 +1,24 @@
-import React from 'react';
-import { createContext } from 'react';
+import { createContext, useContext, useState } from "react";
 
-const initialState = {
-    working: "Yeah it's working"
+const StateContext = createContext();
+
+let initialState = {
+    value: "something"
 }
 
-const AppContext = () => {
-
-    const stateContext = createContext();
-
-  return (
-    <div>AppContext</div>
-  )
+export const  AppState = ({ children }) => {
+    const [colapseAside, setColapseAside] = useState(false);
+    return (
+        <StateContext.Provider
+            value={{
+                initialState,
+                colapseAside,
+                setColapseAside,
+            }}
+        >
+            {children}
+        </StateContext.Provider>
+    )
 }
 
-export default AppContext
+export const useAppContext = () => useContext(StateContext);

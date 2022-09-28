@@ -7,3 +7,4 @@ export { default as Team } from "./Team";
 export { default as Aside } from "./Aside";
 export { default as Header } from "./Header";
 export { default as Workspace } from "./Workspace";
+export { default as NavBar } from "./NavBar";

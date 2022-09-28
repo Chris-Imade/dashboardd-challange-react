@@ -1,0 +1,15 @@
+.navClose {
+    animation-name: navClose;
+    animation-duration: 300ms;
+    transition: all 400ms ease-in;
+    animation-iteration-count: 1;
+    transition: all 200ms ease-in;
+}
+@keyframes navClose {
+    0% { 
+        width: 76.3%;
+    }
+    100% { 
+        width: 100%; 
+    }
+}

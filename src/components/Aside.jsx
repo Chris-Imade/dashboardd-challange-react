@@ -2,64 +2,21 @@ import React, { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { NavLink } from 'react-router-dom/dist';
 import { assets } from '../constants';
-import {workspace} from "../constants"
+import {workspace, firstTier} from "../constants"
+import { useAppContext } from "../contexts/index";
 
-
-
-    let firstTier = [
-        {
-            id: 1,
-            routeName: "Dashboard",
-            routePath: "",
-            routeIcon: assets.dashboardIcon
-        },
-        {
-            id: 2,
-            routeName: "Messages",
-            routePath: "messages",
-            routeIcon: assets.messageTabIcon
-        },
-        {
-            id: 3,
-            routeName: "Team Members",
-            routePath: "team-members",
-            routeIcon: assets.teamMembers
-        },
-        {
-            id: 4,
-            routeName: "Calender",
-            routePath: "calendar",
-            routeIcon: assets.calendarTabIcon
-        },
-        {
-            id: 5,
-            routeName: "Settings",
-            routePath: "settings",
-            routeIcon: assets.settingIcon
-        }
-    ];
-
-
-const Navigation = () => {
-    
-    return (
-        <div>
-
-        </div>
-    )
-}
 
 
 const Aside = () => {
     const [indexItem, setIndexItem] = useState(0);
     const [toggle, setToggle] = useState(false);
-   
+    const { setColapseAside } = useAppContext();
 
   return (
     <>
-        <div className={`aside`}>
+        <div className={`aside overflow-hidden`}>
             {/* logo section */}
-            <div className=''>
+            <div className='flex justify-between items-center overflow-hidden'>
                 <Link to={"/"} className={`logo-section`}>
                     <img 
                         src={assets.logoOne} 
@@ -81,9 +38,13 @@ const Aside = () => {
                     />
                     <h4 className={`text-5xl ml-4 font-bold`}>Grind</h4>
                 </Link>
+                {/* Close icon */}
+                <p 
+                onClick={() => setColapseAside(true)}
+                className='hover:cursor-pointer mr-8 font-bold bg-slate-600 rounded-full w-6 h-6 flex items-center justify-center'>c</p>
             </div>
             {firstTier.map((item) => (
-                    <div className={`first-tier`}
+                    <div className={`first-tier overflow-hidden`}
                     style={{ 
                         transition: "all",
                         transitionDuration: "500ms"
@@ -106,7 +67,7 @@ const Aside = () => {
 
             <div>
                 {/* Second tier */}
-                <button className='second-tier' 
+                <button className='second-tier overflow-hidden' 
                     style={{ 
                         transition: "all",
                         transitionDuration: "500ms"
@@ -130,7 +91,7 @@ const Aside = () => {
                                 setToggle(!toggle);
                             }}
                             className={
-                                `workspace-one 
+                                `workspace-one overflow-hidden
                                 ${index == indexItem ? `mb-[20px]` : `mb-[30px]`} 
                                 workspace-three
                             `}
@@ -158,7 +119,7 @@ const Aside = () => {
                             </button>
                             <div>
                                 {item.subWorkspaces != [] && (indexItem == index && toggle) ? (
-                                    <div className='ml-[60px]'>
+                                    <div className='ml-[60px] overflow-hidden'>
                                     {/* Subdropdown */}
                                     {item.subWorkspaces?.map((item, index) => (
                                             <NavLink to={`workspace/workspace-item/${item.name.toLowerCase()}`} key={item.id} className='subdropdown' 
@@ -172,7 +133,7 @@ const Aside = () => {
                                 </div>
                                 ) : null}
                                 {item.subWorkspaces != [] && (indexItem == index && toggle) && (
-                                    <div className='subworkspace' 
+                                    <div className='subworkspace overflow-hidden' 
                                         style={{ 
                                             transition: "all",
                                             transitionDuration: "500ms"

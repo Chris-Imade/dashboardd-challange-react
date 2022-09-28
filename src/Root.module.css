@@ -1,0 +1,51 @@
+.openAside {
+    animation-name: openAside;
+    animation-duration: 300ms;
+    transition: all 400ms ease-in;
+    animation-iteration-count: 1;
+}
+
+.asideAnimatedClose {
+    animation-name: asideClose;
+    animation-duration: 300ms;
+    transition: all 400ms ease-in;
+    animation-iteration-count: 1;
+}
+.mainAnimatedClose {
+    animation-name: mainClose;
+    animation-duration: 100ms;
+    transition: all 500ms ease-in;
+    animation-iteration-count: 1;
+}
+.transit {
+    transition: all 400ms ease-in;
+}
+@keyframes asideClose {
+    0% { 
+        width: 28vw; 
+        opacity: 1;
+    }
+    100% { 
+        width: 0; 
+        opacity: 0;
+    }
+}
+
+@keyframes mainClose {
+    0% { 
+        width: 72vw; 
+    }
+    100% { 
+        width: 100vw; 
+    }
+}
+@keyframes openAside {
+    0% { 
+        width: 0; 
+        opacity: 0;
+    }
+    100% { 
+        width: 298.7px;
+        opacity: 1;
+    }
+}

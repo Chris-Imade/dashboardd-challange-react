@@ -11,16 +11,16 @@ const Header = ({ title }) => {
                 borderBottomWidth: "1px",
                 borderBottomStyle: "solid",
                 borderBottomColor: "#ECECEC",
-                paddingBottom: "24px"
+                paddingBottom: "34px"
             }}
         >
-            <div className='flex flex-col md:flex-row md:justify-between mr-11'>
+            <div className='flex md:flex-row items-center justify-between mr-11'>
                 <h1 className='text-[50px] font-bold text-black'>{title}</h1>
                 <button className='bg-[#0066FF] w-[165px] h-[47px] rounded-[12px] text-white'>
                     + Add Task
                 </button>
             </div>
-            <div className='flex-col md:flex-row flex md:justify-between md:items-center mt-6'>
+            <div className='md:flex-row flex justify-between items-center mt-6'>
                 <div className='flex justify-start flex-col md:flex-row md:items-center'>
                     <div className='flex items-center'>
                         <p className='mr-4 text-[#848484]'>Teams:</p>

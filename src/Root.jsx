@@ -1,17 +1,23 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom';
 import { Aside } from './components';
-// import { ContextProvider } from './contexts/navContext';
+import { useAppContext } from './contexts/AppContext';
+import styles from "./Root.module.css";
 
 const Root = () => {
+  
+  const { layout } = useAppContext();
+  const { colapseAside } = useAppContext();
+  console.log(colapseAside);
+
   return (
     <>
-        <div className='flex'>
-            <div className='' style={{ flex: 0.28 }}>
+        <div className={`flex ${styles.transit}`}>
+            <div className={`${styles.transit} ${colapseAside && styles.asideAnimatedClose} ${!colapseAside && styles.openAside} ${colapseAside && `w-0`}`}>
               {/* <ContextProvider /> */}
-                <Aside />
+              <Aside />
             </div> 
-            <div className='' style={{ flex: 0.72}}>
+            <div className={`${colapseAside && styles.mainAnimatedClose} ${colapseAside != false && `w-[100vw]`}`}>
                 <Outlet />
             </div>  
         </div>

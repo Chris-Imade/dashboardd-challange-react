@@ -5,6 +5,7 @@ import { customersData } from "./dummyData";
 import { customersGrid } from "./dummyData";
 import { kanbanData } from "./dummyData";
 import { kanbanGrid } from "./dummyData";
+import { firstTier } from "./dummyData";
 
 export {
     assets,
@@ -12,5 +13,6 @@ export {
     customersData,
     customersGrid,
     kanbanData,
-    kanbanGrid
+    kanbanGrid,
+    firstTier
 }

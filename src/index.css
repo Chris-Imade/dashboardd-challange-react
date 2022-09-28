@@ -42,5 +42,8 @@ html {
     .subworkspace {
         @apply ml-10 flex justify-start items-center px-[30px] hover:opacity-40 text-[#848484] w-[90%] hover:bg-[#F1EFEF] rounded-[8px] mb-4;
     }
+    .navbar-styles {
+        @apply w-[76.3%] h-[97px] border-b-[1px] border-[#ECECEC] justify-between absolute right-0 top-0 bg-white flex items-center;
+    }
  }
 

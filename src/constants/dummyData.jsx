@@ -11,6 +11,41 @@ import product6 from '../assets/product6.jpg';
 import product7 from '../assets/product7.jpg';
 import product8 from '../assets/product8.jpg';
 import product9 from '../assets/product9.jpg';
+import assets from './assets';
+
+export const firstTier = [
+  {
+      id: 1,
+      routeName: "Dashboard",
+      routePath: "",
+      routeIcon: assets.dashboardIcon
+  },
+  {
+      id: 2,
+      routeName: "Messages",
+      routePath: "messages",
+      routeIcon: assets.messageTabIcon
+  },
+  {
+      id: 3,
+      routeName: "Team Members",
+      routePath: "team-members",
+      routeIcon: assets.teamMembers
+  },
+  {
+      id: 4,
+      routeName: "Calender",
+      routePath: "calendar",
+      routeIcon: assets.calendarTabIcon
+  },
+  {
+      id: 5,
+      routeName: "Settings",
+      routePath: "settings",
+      routeIcon: assets.settingIcon
+  }
+];
+
 
 const customerGridImage = (props) => (
   <div className="image flex gap-4">
@@ -1962,3 +1997,4 @@ export const scheduleData = [
       keyField: 'Close',
       allowToggle: true },
   ];
+
