@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom/dist';
 import { assets } from '../constants';
 import {workspace, firstTier} from "../constants"
 import { useAppContext } from "../contexts/index";
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 
 
 
@@ -14,12 +15,12 @@ const Aside = () => {
 
   return (
     <>
-        <div className={`aside overflow-hidden`}>
+        <div className={`aside overflow-hidden transition-all duration-[300ms] ease-in`}>
             {/* logo section */}
             <div className='flex justify-between items-center overflow-hidden'>
                 <Link to={"/"} className={`logo-section`}>
                     <img 
-                        src={assets.logoOne} 
+                        src={assets.logoOne}
                         alt="logoOne"
                         style={{
                             width: "27px",
@@ -39,9 +40,10 @@ const Aside = () => {
                     <h4 className={`text-5xl ml-4 font-bold`}>Grind</h4>
                 </Link>
                 {/* Close icon */}
-                <p 
-                onClick={() => setColapseAside(true)}
-                className='hover:cursor-pointer mr-8 font-bold bg-slate-600 rounded-full w-6 h-6 flex items-center justify-center'>c</p>
+                <ArrowCircleLeftIcon
+                    onClick={() => setColapseAside(true)} 
+                    className=' ml-8 hover:cursor-pointer mr-8 font-bold dark:text-white rounded-full w-6 h-6 flex items-center justify-center'
+                />
             </div>
             {firstTier.map((item) => (
                     <div className={`first-tier overflow-hidden`}
@@ -58,12 +60,12 @@ const Aside = () => {
                             }}
                         />
                         <NavLink to={`/${item.routePath}`}>
-                            <span className='text-[#848484]'>{item.routeName}</span>
+                            <span className='dark:text-white text-[#848484]'>{item.routeName}</span>
                         </NavLink>
                     </div>
             ))}
 
-            <hr className='text-[#DBDBDB] mb-[30px]' />
+            <hr className='mb-[30px]' />
 
             <div>
                 {/* Second tier */}
@@ -94,6 +96,7 @@ const Aside = () => {
                                 `workspace-one overflow-hidden
                                 ${index == indexItem ? `mb-[20px]` : `mb-[30px]`} 
                                 workspace-three
+                                dark:text-white
                             `}
                             style={{ 
                                 transition: "all",
@@ -122,17 +125,20 @@ const Aside = () => {
                                     <div className='ml-[60px] overflow-hidden'>
                                     {/* Subdropdown */}
                                     {item.subWorkspaces?.map((item, index) => (
-                                            <NavLink to={`workspace/workspace-item/${item.name.toLowerCase()}`} key={item.id} className='subdropdown' 
-                                            style={{ 
-                                                transition: "all",
-                                                transitionDuration: "500ms"
-                                            }}>
+                                            <NavLink 
+                                                to={`workspace/workspace-item/${item.name.toLowerCase()}`} 
+                                                key={item.id} 
+                                                className={({ isActive }) => !isActive ? `subworkspace active-major` : `bg-[#F1EFEF] active-major`} 
+                                                style={{ 
+                                                    transition: "all",
+                                                    transitionDuration: "500ms"
+                                                }}>
                                                 {item.name}
                                             </NavLink>
                                     ))}
                                 </div>
                                 ) : null}
-                                {item.subWorkspaces != [] && (indexItem == index && toggle) && (
+                                {/* {item.subWorkspaces != [] && (indexItem == index && toggle) && (
                                     <div className='subworkspace overflow-hidden' 
                                         style={{ 
                                             transition: "all",
@@ -149,7 +155,7 @@ const Aside = () => {
                                     />
                                     <button>Add</button>
                                 </div>
-                                )}
+                                )} */}
                             </div>
                         </div>
                     ))}

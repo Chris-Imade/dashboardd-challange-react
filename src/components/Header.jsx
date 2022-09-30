@@ -1,11 +1,13 @@
 import React from 'react'
 import { assets } from '../constants';
+import NavBar from './NavBar';
 
 const Header = ({ title }) => {
   return (
-    <div className='w-full'>
+    <div className='w-full dark:bg-slate-800 transition-all duration-[300ms] ease-in'>
+        <NavBar />
         {/* Conditionally render this span depending on which route am on */}
-        <span className='text-[#848484] text[16px] pl-12'>{"Dashboard"}</span>
+        <span className='dark:text-gray-300 text-[#848484] text[16px] pl-12'>{"Dashboard"}</span>
         <div className='mt-6 pl-12' 
             style={{
                 borderBottomWidth: "1px",
@@ -14,8 +16,8 @@ const Header = ({ title }) => {
                 paddingBottom: "34px"
             }}
         >
-            <div className='flex md:flex-row items-center justify-between mr-11'>
-                <h1 className='text-[50px] font-bold text-black'>{title}</h1>
+            <div className='flex md:flex-row items-center justify-between mr-11 flex-wrap'>
+                <h1 className='text-[50px] font-bold text-black dark:text-white'>{title}</h1>
                 <button className='bg-[#0066FF] w-[165px] h-[47px] rounded-[12px] text-white'>
                     + Add Task
                 </button>
@@ -23,7 +25,7 @@ const Header = ({ title }) => {
             <div className='md:flex-row flex justify-between items-center mt-6'>
                 <div className='flex justify-start flex-col md:flex-row md:items-center'>
                     <div className='flex items-center'>
-                        <p className='mr-4 text-[#848484]'>Teams:</p>
+                        <p className='mr-4 text-[#848484] dark:text-gray-300'>Teams:</p>
                         <div className='flex'>
                             <img 
                                 src={assets.Avatar} 
@@ -66,14 +68,38 @@ const Header = ({ title }) => {
                             </p>
                         </button>
                     </div>
-                    <div className='mt-4 md:mt-0 md:ml-8'>
+                    <div className='mt-4 md:mt-0 md:ml-8 dark:text-gray-300'>
                         Created on: <span className='font-semibold'>Sep 16, 2022</span>
                     </div>
             </div>
                 <div className='mr-11 w-[165px]'>
                     <div className='w-full flex justify-between'>
-                        <button className='text-[#848484] text-[16px]'>Edit</button>
-                        <button className='text-[#848484] text-[16px]'>Share</button>
+                        <button 
+                            className='text-[#848484] text-[16px] dark:text-gray-300 flex'>
+                            <img 
+                                src={assets.edit} 
+                                alt="edit" 
+                                style={{
+                                    width: "24px",
+                                    height: "24px",
+                                    marginRight: "5px"
+                                }}
+                                /> 
+                                Edit
+                            </button>
+                        <button 
+                            className='text-[#848484] text-[16px] dark:text-gray-300 flex'>
+                            <img 
+                                    src={assets.send} 
+                                    alt="share" 
+                                    style={{
+                                        width: "24px",
+                                        height: "24px",
+                                        marginRight: "5px"
+                                    }}
+                                /> 
+                                Share
+                            </button>
                     </div>
                 </div>
             </div>

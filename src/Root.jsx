@@ -7,17 +7,16 @@ import styles from "./Root.module.css";
 const Root = () => {
   
   const { layout } = useAppContext();
-  const { colapseAside } = useAppContext();
-  console.log(colapseAside);
-
+  const { colapseAside, themeMode } = useAppContext();
+  
   return (
     <>
-        <div className={`flex ${styles.transit}`}>
+        <div className={`flex ${styles.transit} ${themeMode === "Dark" ? `dark` : ``}`}>
             <div className={`${styles.transit} ${colapseAside && styles.asideAnimatedClose} ${!colapseAside && styles.openAside} ${colapseAside && `w-0`}`}>
               {/* <ContextProvider /> */}
               <Aside />
             </div> 
-            <div className={`${colapseAside && styles.mainAnimatedClose} ${colapseAside != false && `w-[100vw]`}`}>
+            <div className={`${colapseAside && styles.mainAnimatedClose} w-[100vw]`}>
                 <Outlet />
             </div>  
         </div>

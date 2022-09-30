@@ -2,8 +2,36 @@
     animation-name: navClose;
     animation-duration: 300ms;
     transition: all 400ms ease-in;
-    animation-iteration-count: 1;
-    transition: all 200ms ease-in;
+}
+.openSettings {
+    animation-name: settingsDrawal;
+    animation-duration: 300ms;
+    transition: all 400ms ease-in;
+}
+.closeSettings {
+    animation-name: closeSettingsDrawal;
+    animation-duration: 300ms;
+    transition: all 400ms ease-out;
+}
+
+
+
+
+@keyframes settingsDrawal {
+    0% {
+        margin-right: -50rem;
+    }
+    100%{
+        margin-right: 0;
+    }
+}
+@keyframes closeSettingsDrawal {
+    0% {
+        margin-right: 0;
+    }
+    100% {
+        margin-right: -50rem;
+    }
 }
 @keyframes navClose {
     0% { 

@@ -17,7 +17,7 @@ import { customersData, customersGrid } from "../constants/index";
 
 const Team = () => {
   return (
-    <div className='mt-[11rem] bg-white rounded-3xl overflow-y-auto no-scrollbar h-[100vh] mb-[12rem]'>
+    <div className='bg-white overflow-y-auto no-scrollbar h-[100vh] mb-[12rem] dark:bg-slate-800'>
       <Header title={"Team Members"} />
       <div className='m-12 mb-[15rem]'>
         <GridComponent

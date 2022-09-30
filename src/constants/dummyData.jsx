@@ -95,11 +95,11 @@ export const workspace = [
             id: 1
         },
         {
-            name: "Client Projects",
+            name: "Me Projects",
             id: 2
         },
         {
-            name: "Client Projects",
+            name: "You Projects",
             id: 3
         }]
     },

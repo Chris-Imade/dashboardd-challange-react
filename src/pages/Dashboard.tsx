@@ -4,9 +4,8 @@ import { useAppContext } from '../contexts/AppContext'
 
 const Dashboard = () => {
   const { initialState } = useAppContext();
-  console.log(initialState);
   return (
-    <div className='flex flex-col justify-start mt-[11rem] overflow-y-auto no-scrollbar h-[100vh]'>
+    <div className='flex flex-col justify-start  overflow-y-auto no-scrollbar h-[100vh] dark:bg-slate-800'>
       <Header title={"Dashboard"} />
       <div className='m-11'>
         

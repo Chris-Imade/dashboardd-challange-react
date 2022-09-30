@@ -15,7 +15,6 @@ const App = () => {
   return (
     <AppState>
       <BrowserRouter>
-        <NavBar />
         <Routes>
           <Route path='/' element={<Root />}>
             <Route index element={<Dashboard />} />
@@ -33,4 +32,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

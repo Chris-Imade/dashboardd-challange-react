@@ -8,12 +8,20 @@ let initialState = {
 
 export const  AppState = ({ children }) => {
     const [colapseAside, setColapseAside] = useState(false);
+    const [themeMode, setThemeMode] = useState();
+    console.log(themeMode);
+
+    const setMode = () => {
+
+    }
+
     return (
         <StateContext.Provider
             value={{
                 initialState,
                 colapseAside,
                 setColapseAside,
+                themeMode, setThemeMode,
             }}
         >
             {children}

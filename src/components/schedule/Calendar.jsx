@@ -17,7 +17,7 @@ import Header from '../Header';
 
 const Calendar = () => {
   return (
-    <div className='mt-[11rem] bg-white rounded-3xl overflow-y-auto no-scrollbar h-[100vh] mb-[12rem]'>
+    <div className='bg-white overflow-y-auto no-scrollbar h-[100vh] mb-[12rem] dark:bg-slate-800'>
       <Header title={"Calendar"} />
       <div className='m-12 mb-[15rem]'>
         <ScheduleComponent

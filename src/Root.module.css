@@ -3,6 +3,7 @@
     animation-duration: 300ms;
     transition: all 400ms ease-in;
     animation-iteration-count: 1;
+    width: 30rem;
 }
 
 .asideAnimatedClose {

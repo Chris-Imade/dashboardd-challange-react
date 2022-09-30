@@ -27,6 +27,8 @@ import arrowDown from "../assets/arrow-down.png";
 import logoOne from "../assets/logoOne.png";
 import logoTwo from "../assets/logoTwo.png";
 import gind from "../assets/grind.png";
+import edit from "../assets/edit.png";
+import send from "../assets/send.png";
 // logo images ends...
 
 
@@ -60,4 +62,6 @@ export default {
     search,
     sun,
     arrowDown,
+    edit,
+    send,
 }
