@@ -22,16 +22,17 @@ const Header = ({ title }) => {
                     + Add Task
                 </button>
             </div>
-            <div className='md:flex-row flex justify-between items-center mt-6'>
+            <div className='md:flex-row flex justify-between items-center mt-6 flex-wrap'>
                 <div className='flex justify-start flex-col md:flex-row md:items-center'>
-                    <div className='flex items-center'>
+                    <div className='flex items-center flex-wrap'>
                         <p className='mr-4 text-[#848484] dark:text-gray-300'>Teams:</p>
-                        <div className='flex'>
+                        <div className='flex items-center mr-4'>
                             <img 
                                 src={assets.Avatar} 
                                 alt="members"
                                 style={{
-                                    width: 41
+                                    width: 41,
+                                    objectFit: "contain"
                                 }}  
                                 className=''
                             />
@@ -39,7 +40,9 @@ const Header = ({ title }) => {
                                 src={assets.Avatar} 
                                 alt="members"
                                 style={{
-                                    width: 41
+                                    width: 41,
+                                    height: 41,
+                                    objectFit: "contain"
                                 }}  
                                 className='ml-[-.6rem]'
                             />
@@ -47,14 +50,21 @@ const Header = ({ title }) => {
                                 src={assets.Avatar} 
                                 alt="members"
                                 style={{
-                                    width: 41
+                                    width: 41,
+                                    height: 41,
+                                    objectFit: "contain"
                                 }}  
                                 className='ml-[-.6rem]'
                             />
-                            <span className='text-[#616161] text-[14px] w-[41px] h-[41px] border-[2px] border-white rounded-full bg-[#F1F1F1] flex items-center justify-center ml-[-.6rem]'>+2</span>
+                            <p 
+                                className='text-[#616161] text-[14px] w-6 h-6 p-5 border-[2px] border-white rounded-full bg-[#F1F1F1] flex items-center justify-center ml-[-.6rem]'
+                                    // style={{
+                                    //     objectFit: "contain"
+                                    // }}
+                                >+2</p>
                         </div>
                         <button>
-                            <p className='flex items-center pl-7 ml-7 text-[#0066FF] border-l-[#E4E4E4] border-l-[1px]'>
+                            <p className='flex items-center pl-7 text-[#0066FF] border-l-[#E4E4E4] border-l-[1px]'>
                                 <img 
                                     src={assets.addIcon} 
                                     alt={"add"}

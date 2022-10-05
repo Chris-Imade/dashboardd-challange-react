@@ -17,7 +17,7 @@ export const firstTier = [
   {
       id: 1,
       routeName: "Dashboard",
-      routePath: "",
+      routePath: "dashboard",
       routeIcon: assets.dashboardIcon
   },
   {
@@ -41,7 +41,6 @@ export const firstTier = [
   {
       id: 5,
       routeName: "Settings",
-      routePath: "settings",
       routeIcon: assets.settingIcon
   }
 ];
@@ -92,15 +91,18 @@ export const workspace = [
         id: 1,
         subWorkspaces: [{
             name: "Client Projects",
-            id: 1
+            id: 1,
+            path: "workspace/client-projects"
         },
         {
-            name: "Me Projects",
-            id: 2
+            name: "Research Projects",
+            id: 2,
+            path: "workspace/client-projects/research-project"
         },
         {
-            name: "You Projects",
-            id: 3
+            name: "Public Offers",
+            id: 3,
+            path: "workspace/client-projects/public-offers"
         }]
     },
     {
@@ -109,15 +111,18 @@ export const workspace = [
         subWorkspaces: [
             {
                 name: "Portfolio Website",
-                id: 1
+                id: 1,
+                path: "workspace/daily-todos/portfolio-website"
             },
             {
                 name: "Crypto Mobile App",
-                id: 2
+                id: 2,
+                path: "workspace/daily-todos/crypto-mobile-app"
             },
             {
                 name: "Game Design",
-                id: 3
+                id: 3,
+                path: "workspace/daily-todos/game-design"
             }
         ]
     },
@@ -126,16 +131,19 @@ export const workspace = [
         name: "Yearly Goals",
         subWorkspaces: [
         {
-            name: "Yearly Goals",
-            id: 1
+            name: "Two Year's Goals",
+            id: 1,
+            path: "workspace/yearly-goals/two-years-goals"
         },
         {
-            name: "Yearly Goals",
-            id: 2
+            name: "Four Year's Goals",
+            id: 2,
+            path: "workspace/yearly-goals/four-years-goals"
         },
         {
-            name: "Yearly Goals",
-            id: 3
+            name: "Four Year's Goals",
+            id: 3,
+            path: "workspace/yearly-goals/six-years-goals"
         }]
     }
 ];

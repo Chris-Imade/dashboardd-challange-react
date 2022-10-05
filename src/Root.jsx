@@ -6,7 +6,6 @@ import styles from "./Root.module.css";
 
 const Root = () => {
   
-  const { layout } = useAppContext();
   const { colapseAside, themeMode } = useAppContext();
   
   return (

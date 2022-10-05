@@ -16,8 +16,10 @@
     "@syncfusion/ej2-react-grids": "^20.2.49",
     "@syncfusion/ej2-react-kanban": "^20.2.45",
     "@syncfusion/ej2-react-schedule": "^20.2.50",
+    "chart.js": "^3.9.1",
     "global": "^4.4.0",
     "react": "^18.2.0",
+    "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {

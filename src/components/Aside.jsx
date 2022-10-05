@@ -11,11 +11,11 @@ import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 const Aside = () => {
     const [indexItem, setIndexItem] = useState(0);
     const [toggle, setToggle] = useState(false);
-    const { setColapseAside } = useAppContext();
+    const { setColapseAside, setOpenSettings } = useAppContext();
 
   return (
     <>
-        <div className={`aside overflow-hidden transition-all duration-[300ms] ease-in`}>
+        <div className={`aside transition-all duration-[300ms] ease-in`}>
             {/* logo section */}
             <div className='flex justify-between items-center overflow-hidden'>
                 <Link to={"/"} className={`logo-section`}>
@@ -41,8 +41,12 @@ const Aside = () => {
                 </Link>
                 {/* Close icon */}
                 <ArrowCircleLeftIcon
-                    onClick={() => setColapseAside(true)} 
-                    className=' ml-8 hover:cursor-pointer mr-8 font-bold dark:text-white rounded-full w-6 h-6 flex items-center justify-center'
+                        onClick={() => setColapseAside(true)} 
+                        className=' ml-8 hover:cursor-pointer mr-8 font-bold dark:text-white rounded-full w-6 h-6 flex items-center justify-center'
+                        style={{
+                            width: 30,
+                            height: 30
+                        }}
                 />
             </div>
             {firstTier.map((item) => (
@@ -59,9 +63,19 @@ const Aside = () => {
                                 marginRight: "17px"
                             }}
                         />
-                        <NavLink to={`/${item.routePath}`}>
-                            <span className='dark:text-white text-[#848484]'>{item.routeName}</span>
-                        </NavLink>
+                        {item.routePath && (
+                            <NavLink to={`/${item?.routePath}`}>
+                                <span className='dark:text-white text-[#848484]'>{item.routeName}</span>
+                            </NavLink>
+                        )}
+                        {item.routeName === "Settings" && (
+                            <button 
+                                className='dark:text-white text-[#848484]'
+                                onClick={() => setOpenSettings(true)}    
+                            >
+                                {item.routeName}
+                            </button>
+                        )}
                     </div>
             ))}
 
@@ -122,13 +136,13 @@ const Aside = () => {
                             </button>
                             <div>
                                 {item.subWorkspaces != [] && (indexItem == index && toggle) ? (
-                                    <div className='ml-[60px] overflow-hidden'>
+                                    <div className='ml-[60px] overflow-hidden mr-4'>
                                     {/* Subdropdown */}
                                     {item.subWorkspaces?.map((item, index) => (
                                             <NavLink 
-                                                to={`workspace/workspace-item/${item.name.toLowerCase()}`} 
+                                                to={`${item.path}`} 
                                                 key={item.id} 
-                                                className={({ isActive }) => !isActive ? `subworkspace active-major` : `bg-[#F1EFEF] active-major`} 
+                                                className={`subworkspace active-major`} 
                                                 style={{ 
                                                     transition: "all",
                                                     transitionDuration: "500ms"

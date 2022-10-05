@@ -1,29 +1,33 @@
 import React from 'react'
 import { assets } from '../constants'
 import CardImg from "../assets/card.png";
+import { useAppContext } from '../contexts';
+
 
 
 const CardActionBtn = ({cardTitle, ...props }) => {
   return (<span style={{transition: 'all', transitionDuration: "600ms"}} {...props}>{cardTitle}</span>)
 }
 
-const Card = ({title, design, priority, comments, handles, image}) => {
+const Card = ({title, design, priority, comments, handles, image, imgCard, ratio, ratioPerc}) => {
   
+  const { colapseAside } = useAppContext();
+
   return (
-    <div className={`bg-white rounded-[8px] p-4 max-w-[301px]`}>
+  <div className={`bg-white dark:text-white dark:bg-slate-800 rounded-[8px] p-4 ${colapseAside == false ? `max-w-[250px]` : `max-w-[250px] lg:max-w-[320px]`}`}>
       <div className={`flex justify-between items-center`}>
-        <div>
+        <div className='flex no-scrollbar overflow-x-auto min-h-[40px]'>
           <CardActionBtn
             cardTitle={priority} 
-            className={`mr-4 cursor-pointer rounded-[11px] py-2 px-2 font-semibold transition-all ease-out hover:bg-[#DC7878] bg-[#FFE9E9] hover:text-[#FFE9E9] text-[#DC7878]`} 
+            className={`no-scrollbar overflow-x-auto max-h-[40px] min-w-[112px] mr-4 cursor-pointer rounded-[11px] py-2 px-2 font-semibold transition-all ease-out hover:bg-[#DC7878] bg-[#FFE9E9] hover:text-[#FFE9E9] text-[#DC7878]`} 
           />
           <CardActionBtn 
-            cardTitle={design} 
-            className={`mr-4 cursor-pointer rounded-[11px] py-2 px-2 font-semibold transition-all ease-out hover:text-[#F1F1F1] text-[#848484] hover:bg-[#848484] bg-[#F1F1F1]`} 
+            cardTitle={design}
+            className={`no-scrollbar overflow-x-auto max-h-[40px] min-w-[90px] mr-4 cursor-pointer rounded-[11px] py-2 px-2 font-semibold transition-all ease-out hover:text-[#F1F1F1] text-[#848484] hover:bg-[#848484] bg-[#F1F1F1]`} 
           />
         </div>
         <div>
-        <button className='hover:bg-[#F1F1F1] rounded-full p-1'>
+        <button className='hover:bg-[#F1F1F1] rounded-full p-1 dark:hover:bg-slate-300'>
           <img 
             src={assets.more} 
             alt="hamburger menu"
@@ -35,14 +39,14 @@ const Card = ({title, design, priority, comments, handles, image}) => {
       </div>
       <h1 className={`font-semibold text-xl mb-2 mt-4`}>{title}</h1>
 
-      {/* card image not compulsory */}
-      <img
-       src={assets.imageCard} 
+      {imgCard && (
+        <img
+       src={imgCard} 
        alt="card display"
        className={`w-full cursor-pointer`} 
       />
-
-
+      )}
+      
       {/* Add persons */}
       <div className='my-4 flex'>
         <div className={`flex`}>
@@ -54,7 +58,7 @@ const Card = ({title, design, priority, comments, handles, image}) => {
           <img 
             src={assets.manAvatar} 
             alt="man avatar"
-            className={`w-[29.47px] z-10 ml-[-.4rem] cursor-pointer`}
+            className={`w-[29.47px] z-[1] ml-[-.4rem] cursor-pointer`}
           />
         </div>
         
@@ -73,10 +77,10 @@ const Card = ({title, design, priority, comments, handles, image}) => {
       <div>
         <div className='flex items-center justify-between'>
           <h2 className={`text-[#848484]`}>Task Progress</h2>
-          <p className={`text-[#848484]`}>7/10</p>
+          <p className={`text-[#848484]`}>{ratio}</p>
         </div>
         <div className={`max-w-[262px] h-[5px] bg-[#EDECEC] rounded-[13px] mt-1`}>
-          <div className={`h-[5px] bg-[#0066FF] rounded-[13px] w-[70%]`}></div>
+          <div className={`h-[5px] bg-[#0066FF] rounded-[13px] w-[${ratioPerc}]`}></div>
         </div>
 
         {/* Horizontal line */}

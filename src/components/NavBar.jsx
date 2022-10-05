@@ -10,9 +10,11 @@ const NavBar = () => {
         colapseAside, 
         setColapseAside, 
         themeMode, 
-        setThemeMode 
+        setMode,
+        openSetting, 
+        setOpenSettings,
     } = useAppContext();
-    const [openSetting, setOpenSettings] = useState(false);
+    
     console.log(themeMode);
 
     const closeModal = (e) => {
@@ -29,12 +31,19 @@ const NavBar = () => {
         mb-4
         rounded-none
         transition-all duration-[300ms] ease-in
+        no-scrollbar
+        overflow-x-auto
+        max-w-[100%]
     `}>
         {colapseAside && (
             // Conditionally add logo here too
             <ArrowCircleRightIcon
                 onClick={() => setColapseAside(false)}
                 className=' ml-8 hover:cursor-pointer mr-8 font-bold dark:text-white rounded-full w-6 h-6 flex items-center justify-center'
+                style={{
+                    width: 30,
+                    height: 30
+                }}
             />
         )}
         <div className={`relative`}>
@@ -52,7 +61,7 @@ const NavBar = () => {
             type="search" 
             placeholder='Search' 
             name='search' 
-            className={`dark:bg-slate-700 bg-[#F6F6F6] dark:text-white rounded-[12px] max-w-[587px] lg:w-[587px] h-[47px] pl-[57px] ml-[30px] outline-none`}
+            className={`mr-[24px] dark:bg-slate-700 bg-[#F6F6F6] dark:text-white rounded-[12px] max-w-[587px] lg:w-[587px] h-[47px] pl-[57px] ml-[30px] outline-none`}
         />
         </div>
         {/* Right Nav */}
@@ -89,13 +98,18 @@ const NavBar = () => {
         </div>
         {openSetting && (
             <div className={`modal-settings`} onClick={closeModal}>
-                <div className={`${styles.openSettings} dark:bg-slate-800 h-full bg-white w-full md:w-[40rem] shadow-2xl`}>
+                <div className={`${styles.openSettings} dark:bg-slate-800 h-full bg-white w-full md:w-[40rem] shadow-2xl fixed top-0 right-0`}>
                     <div className='flex justify-between pl-[30px] py-[36px] border-b-[1px] border-solid border-slate-400'>
                         <p className='dark:text-white font-semibold text-3xl'>Settings</p>
                         <div className='hover:cursor-pointer'>
                             <HighlightOffIcon 
                             onClick={() => setOpenSettings(false)}
-                            className=' mr-[30px] dark:text-white' />
+                            className=' mr-[30px] dark:text-white'
+                            style={{
+                                width: 30,
+                                height: 30
+                            }}
+                            />
                         </div>
                     </div>
                     <div className='pl-[30px] py-[36px] border-b-[1px] border-solid border-slate-400'>
@@ -105,7 +119,7 @@ const NavBar = () => {
                                 type="radio" 
                                 id='dark' 
                                 value={"Dark"}
-                                onChange={(e) => setThemeMode(e.target.value)} 
+                                onChange={(e) => setMode(e.target.value)} 
                                 checked={themeMode === "Dark" && true}
                             />
                             <label htmlFor="dark" className='ml-4 dark:text-white'>Dark</label>
@@ -115,7 +129,7 @@ const NavBar = () => {
                                 type="radio" 
                                 id='light'
                                 value={"Light"}
-                                onChange={(e) => setThemeMode(e.target.value)} 
+                                onChange={(e) => setMode(e.target.value)} 
                                 checked={themeMode === "Light" && true}
                             />
                             <label htmlFor="light" className='ml-4 dark:text-white'>Light</label>

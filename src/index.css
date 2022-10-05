@@ -40,15 +40,15 @@ html {
         @apply flex justify-start items-center px-[15px] pt-[10px] pb-[10px] hover:opacity-40 text-[#848484] w-[95%] hover:bg-[#F1EFEF] rounded-[8px];
     }
     .subworkspace {
-        @apply text-[#848484] w-[90%] rounded-[8px] mb-4;
+        @apply text-[#848484] w-full rounded-[8px] mb-4;
     }
     .active-major {
-        @apply ml-10 flex justify-start items-center px-[30px];
+        @apply flex justify-start items-center px-4 py-3 my-3 rounded-xl hover:no-underline hover:text-[#848484] hover:bg-[#7575752a] mr-4;
     }
     .navbar-styles {
         @apply h-[97px] border-b-[1px] border-[#ECECEC] justify-between dark:bg-slate-800 bg-white flex items-center;
     }
     .modal-settings {
-        @apply absolute top-0 right-0 flex flex-col justify-start items-end flex-1 bg-[#64748b5b] w-full h-full z-[1];
+        @apply absolute top-0 right-0 flex flex-col justify-start items-end flex-1 bg-[#64748b5b] w-full h-full z-[10];
     }
  }

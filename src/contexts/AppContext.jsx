@@ -8,11 +8,13 @@ let initialState = {
 
 export const  AppState = ({ children }) => {
     const [colapseAside, setColapseAside] = useState(false);
-    const [themeMode, setThemeMode] = useState();
+    const [themeMode, setThemeMode] = useState(localStorage.getItem("theme"));
+    const [openSetting, setOpenSettings] = useState(false);
     console.log(themeMode);
 
-    const setMode = () => {
-
+    const setMode = (theme) => {
+        let mode = localStorage.setItem("theme",theme);
+        setThemeMode(localStorage.getItem("theme")); 
     }
 
     return (
@@ -21,7 +23,8 @@ export const  AppState = ({ children }) => {
                 initialState,
                 colapseAside,
                 setColapseAside,
-                themeMode, setThemeMode,
+                themeMode, setMode,
+                openSetting, setOpenSettings,
             }}
         >
             {children}
