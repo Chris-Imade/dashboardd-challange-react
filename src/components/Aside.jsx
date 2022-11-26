@@ -5,7 +5,7 @@ import { assets } from '../constants';
 import {workspace, firstTier} from "../constants"
 import { useAppContext } from "../contexts/index";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
-
+import AwaFarm from "../assets/AwaFarm.png";
 
 
 const Aside = () => {
@@ -18,27 +18,9 @@ const Aside = () => {
         <div className={`aside transition-all duration-[300ms] ease-in`}>
             {/* logo section */}
             <div className='flex justify-between items-center overflow-hidden'>
-                <Link to={"/"} className={`logo-section`}>
-                    <img 
-                        src={assets.logoOne}
-                        alt="logoOne"
-                        style={{
-                            width: "27px",
-                            height: "36px"
-                        }}
-                        className={``}
-                    />
-                    <img 
-                        src={assets.logoOne} 
-                        alt="logoOne"
-                        style={{
-                            width: "27px",
-                            height: "36px"
-                        }}
-                        className={`ml-[-0.82rem] mt-[2rem]`}
-                    />
-                    <h4 className={`text-5xl ml-4 font-bold`}>Grind</h4>
-                </Link>
+                <div className="my-5 mx-9">
+                    <img width={170} src={AwaFarm} alt="Awa farm" />
+                </div>
                 {/* Close icon */}
                 <ArrowCircleLeftIcon
                         onClick={() => setColapseAside(true)} 

@@ -36,13 +36,13 @@ const App = () => {
             <Route path='calendar' element={<Calendar />} />
             <Route path='*' element={<ErrorPage />} />
             {/* workspace */}
-            <Route path='workspace/client-projects' element={<ClientProjects />} />
-            <Route path='workspace/client-projects/research-project' element={<ResearchProject />} />
-            <Route path='workspace/client-projects/public-offers' element={<PublicOffers />} />
+            <Route path='workspace/poutry-farming' element={<ClientProjects />} />
+            <Route path='workspace/poutry-farming/farming-research' element={<ResearchProject />} />
+            <Route path='workspace/poutry-farming/public-collabos' element={<PublicOffers />} />
             {/* Daily todos */}
-            <Route path='workspace/daily-todos/portfolio-website' element={<Portfolio />} />
-            <Route path='workspace/daily-todos/crypto-mobile-app' element={<Crypto />} />
-            <Route path='workspace/daily-todos/game-design' element={<Game />} />
+            <Route path='workspace/daily-todos/manure-application' element={<Portfolio />} />
+            <Route path='workspace/daily-todos/health-check' element={<Crypto />} />
+            <Route path='workspace/daily-todos/weed-elimination' element={<Game />} />
             {/* Yearly Goals */}
             <Route path='workspace/yearly-goals/two-years-goals' element={<TwoYears />} />
             <Route path='workspace/yearly-goals/four-years-goals' element={<FourYears />} />

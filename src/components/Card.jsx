@@ -18,11 +18,11 @@ const Card = ({title, design, priority, comments, handles, image, imgCard, ratio
       <div className={`flex justify-between items-center`}>
         <div className='flex no-scrollbar overflow-x-auto min-h-[40px]'>
           <CardActionBtn
-            cardTitle={priority} 
+            cardTitle={"Labourers"} 
             className={`no-scrollbar overflow-x-auto max-h-[40px] min-w-[112px] mr-4 cursor-pointer rounded-[11px] py-2 px-2 font-semibold transition-all ease-out hover:bg-[#DC7878] bg-[#FFE9E9] hover:text-[#FFE9E9] text-[#DC7878]`} 
           />
           <CardActionBtn 
-            cardTitle={design}
+            cardTitle={"Harvesters"}
             className={`no-scrollbar overflow-x-auto max-h-[40px] min-w-[90px] mr-4 cursor-pointer rounded-[11px] py-2 px-2 font-semibold transition-all ease-out hover:text-[#F1F1F1] text-[#848484] hover:bg-[#848484] bg-[#F1F1F1]`} 
           />
         </div>
@@ -43,7 +43,7 @@ const Card = ({title, design, priority, comments, handles, image, imgCard, ratio
         <img
        src={imgCard} 
        alt="card display"
-       className={`w-full cursor-pointer`} 
+       className={`w-full cursor-pointer rounded-2xl`} 
       />
       )}
       
@@ -76,11 +76,11 @@ const Card = ({title, design, priority, comments, handles, image, imgCard, ratio
       {/* I need to sort a way to get the progress dynamically */}
       <div>
         <div className='flex items-center justify-between'>
-          <h2 className={`text-[#848484]`}>Task Progress</h2>
+          <h2 className={`text-[#848484]`}>Crop Readiness</h2>
           <p className={`text-[#848484]`}>{ratio}</p>
         </div>
         <div className={`max-w-[262px] h-[5px] bg-[#EDECEC] rounded-[13px] mt-1`}>
-          <div className={`h-[5px] bg-[#0066FF] rounded-[13px] w-[${ratioPerc}]`}></div>
+          <div className={`h-[5px] bg-[#713131] rounded-[13px] w-[${ratioPerc}]`}></div>
         </div>
 
         {/* Horizontal line */}

@@ -8,7 +8,7 @@ const Dashboard = () => {
     <div className='flex flex-col justify-start  overflow-y-auto no-scrollbar h-[100vh] dark:bg-slate-800'>
       <Header title={"Dashboard"} />
       <div className='m-11'>
-        <div className='text-4xl font-semibold dark:text-white mb-[30px]'>Administrative Overview</div>
+        <div className='text-4xl font-semibold dark:text-white mb-[30px]'>Farmig Progress</div>
         <HorizontalChart />
       </div>
     </div>

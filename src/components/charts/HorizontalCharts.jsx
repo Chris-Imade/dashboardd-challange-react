@@ -60,20 +60,18 @@ const HorizontalChart = () => {
         <div className={`rounded-[10px] border-[2px] border-gray-200 hover:cursor-pointer hover:shadow-lg hover:border-[#236ef9] pt-[18.71px] px-[18.71px] pb-[14.97px] mb-6 lg:min-w-[40rem]`}>
             <div className="flex justify-between items-center">
                 <div className="">
-                    <p className="text-[11.23px] text-gray-400">Workspace Growth</p>
-                    <h4 className="text-[18.71px] font-semibold">$98, 790.00</h4>
+                    <p className="text-[11.23px] text-gray-400">Pig Farming Growth</p>
+                    <h4 className="text-[18.71px] font-semibold">₦800, 790.00</h4>
                 </div>
-                <img className="w-7" src={Ether} alt={Ether} />
             </div>
             <ChartElem options={options} data={dataTwo} />
         </div>
         <div className={` rounded-[10px] border-[2px] border-gray-200 hover:cursor-pointer hover:shadow-lg hover:border-[#236ef9] pt-[18.71px] px-[18.71px] pb-[14.97px] mb-6 lg:min-w-[40rem]`}>
             <div className="flex justify-between items-center">
                 <div className="">
-                    <p className="text-[11.23px] text-gray-400">Workspace Growth</p>
-                    <h4 className="text-[18.71px] font-semibold">$98, 790.00</h4>
+                    <p className="text-[11.23px] text-gray-400">Snail Farming Growth</p>
+                    <h4 className="text-[18.71px] font-semibold">₦90, 790.00</h4>
                 </div>
-                <img className="w-7" src={Ether} alt={Ether} />
             </div>
             <ChartElem options={options} data={dataTwo} />
         </div>

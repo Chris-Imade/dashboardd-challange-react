@@ -1,4 +1,6 @@
 import React from 'react'
+import BoardView from './BoardView'
+import Header from './Header'
 
 const SixYears = () => {
   return (

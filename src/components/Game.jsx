@@ -5,7 +5,7 @@ import Header from './Header'
 const Game = () => {
   return (
     <div className='bg-white overflow-y-auto no-scrollbar h-[100vh] mb-[12rem] dark:bg-slate-800'>
-      <Header title={"Game Design"} />
+      <Header title={"Weed Elimination"} />
       <BoardView />
     </div>
   )

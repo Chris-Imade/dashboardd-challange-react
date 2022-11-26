@@ -87,22 +87,22 @@ const gridEmployeeCountry = (props) => (
 
 export const workspace = [
     {
-        name: "Client Projects",
+        name: "Poutry Farming",
         id: 1,
         subWorkspaces: [{
-            name: "Client Projects",
+            name: "Team Collaboration",
             id: 1,
-            path: "workspace/client-projects"
+            path: "workspace/poutry-farming"
         },
         {
-            name: "Research Projects",
+            name: "Farming Research",
             id: 2,
-            path: "workspace/client-projects/research-project"
+            path: "workspace/poutry-farming/farming-research"
         },
         {
-            name: "Public Offers",
+            name: "Public Collaborations",
             id: 3,
-            path: "workspace/client-projects/public-offers"
+            path: "workspace/poutry-farming/public-collabos"
         }]
     },
     {
@@ -110,19 +110,19 @@ export const workspace = [
         id: 2,
         subWorkspaces: [
             {
-                name: "Portfolio Website",
+                name: "Manure Application",
                 id: 1,
-                path: "workspace/daily-todos/portfolio-website"
+                path: "workspace/daily-todos/manure-application"
             },
             {
-                name: "Crypto Mobile App",
+                name: "Live Stock Health Check",
                 id: 2,
-                path: "workspace/daily-todos/crypto-mobile-app"
+                path: "workspace/daily-todos/health-check"
             },
             {
-                name: "Game Design",
+                name: "Regulatory Weeding",
                 id: 3,
-                path: "workspace/daily-todos/game-design"
+                path: "workspace/daily-todos/weed-elimination"
             }
         ]
     },
